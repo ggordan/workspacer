@@ -1,0 +1,28 @@
+doctype 5
+html
+  head
+    title #{title} | workspacer
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    div.navbar.navbar-static-top
+      div.navbar-inner
+          div.container
+            a.btn.btn-navbar(data-toggle="collapse", data-target=".nav-collapse")
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            a.brand(href='/') workspacer
+            div.nav-collapse.collapse
+                ul.nav.pull-right
+                 li.active
+                    a(href='#') Dashboard
+                 li
+                    a(href='#') Projects
+
+    block content
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+    script window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+    script(src='/javascripts/bootstrap.min.js')
+    script(src='/javascripts/main.js')

@@ -1,0 +1,12 @@
+div#firstRun.modal.hide(tabindex='-1', role='dialog')
+    div.modal-header
+        button.close(type='button', data-dismiss='modal', aria-hidden='true') &times;
+        h3 Welcome to workspacer
+    div.modal-body
+        p Choose the location you wish to use as your workspace
+        input(type='text', placeholder='Hello')
+        p Choose your home directory
+        input(type='text', placeholder='Hello')
+    div.modal-footer
+        button.btn.btn-primary(type='button', data-loading-text="Updating...") Save changes
+        button.btn(type='button', data-loading-text="Updating...") Dismiss
