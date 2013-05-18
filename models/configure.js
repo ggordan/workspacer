@@ -5,12 +5,18 @@ var
 
 var ConfigureSchema = new Schema({
     first: Boolean,
+    username: String,
     home_directory: String,
     workspace_directory: String
 });
 
-ProjectSchema.statics.firstRun = function (username, callback) {
-    return this.find({ username: url }, callback);
+ConfigureSchema.statics.firstRun = function (username, callback) {
+    var user = this.find({ username: username }, callback);
+    if (true === user.first) {
+        return true;
+    } else {
+        return false;
+    }
 };
 
 mongoose.model('Configure', ConfigureSchema);

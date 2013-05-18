@@ -13,6 +13,10 @@ require('./config/express.js')(app, __dirname);
 require('./config/mongoose.js');
 
 // Load all the models
+var models_path = path.join(__dirname, "models");
+fs.readdirSync(models_path).forEach(function (file) {
+    require(path.join(models_path, file));
+});
 
 // Include the routes
 require('./config/routes.js')(app);
@@ -28,6 +32,6 @@ if (cluster.isMaster) {
     });
 } else {
     app.listen(app.get('port'), function() {
-        console.log("Server is listening on port %s", app.get('port'));
+        console.log("Server is listening on port: %s, PID: %d", app.get('port'), process.pid);
     });
 }
